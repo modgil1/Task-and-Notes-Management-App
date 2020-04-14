@@ -18,7 +18,7 @@ const TaskManager = db.define('TaskManager', {
     due: {
         type: Sequelize.DATE,
         allowNull: true,
-        defaultValue: Sequelize.NOW + 1
+        defaultValue: Sequelize.NOW 
     },
     status: {
         type: Sequelize.STRING(15),
@@ -39,6 +39,11 @@ const TaskManager = db.define('TaskManager', {
         allowNull: true,
     }  
 })
+
+// to check if db created or not
+db.sync()
+        .then(() => console.log('Databae has been synced.'))
+        .catch((err) => console.log('Error creating database.'))
 
 module.exports = {
     db, TaskManager
