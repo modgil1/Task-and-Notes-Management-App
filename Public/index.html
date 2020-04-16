@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Public/Styles/style.css">
+    <link rel="stylesheet" href="./Styles/style.css" type="text/css" >
+    <script src="./Scripts/jquery-3.4.1.js"></script>
+    <script async defer src="./Scripts/script.js"></script>
+    <script async defer src="./Scripts/expand.js"></script>
     <title>Task and Notes Manager</title>
 </head>
 <body>
@@ -16,12 +19,22 @@
     </div>
 
 
-<ul id="myList" type="none">
-    <h2 style="color: green; margin: 20px;">Tasks to be done:</h2>
-    <li>Submit NodeJs Project</li>
-    <li class="checked">Send Email to get CodingBlock's Course</li>
-    <li>Start MVC Project</li>
+<legend>List Of Tasks are Shown Below:</legend>
+
+<label for="sortBy">sort by</label>
+
+    <select id="sortBy">
+    <option value="duedate">Due Date</option>
+    <option value="priority">Priority</option>
+    <option value="status">Status</option>
+    
+    </select>
+
+<ul id="myList">
+
 </ul>
+
+
   
 <footer class="jumbotron">
     <p><span style="color: red;">Copyright</span> © 1999-2020 Samriti_Modgil. All rights reserved.</p>
@@ -29,6 +42,6 @@
 
 <!-- <script type="text/javascript" src="Scripts/script.js"></script> -->
 </body>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </html>
 

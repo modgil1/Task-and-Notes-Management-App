@@ -40,9 +40,10 @@ const TaskManager = db.define('TaskManager', {
     }  
 })
 
+
 // to check if db created or not
 db.sync()
-        .then(() => console.log('Databae has been synced.'))
+        .then(() => console.log('Database has been synced.'))
         .catch((err) => console.log('Error creating database.'))
 
 module.exports = {

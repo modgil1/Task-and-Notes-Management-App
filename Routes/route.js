@@ -1,20 +1,30 @@
 const { Router } = require('express')
-const { Tasks } = require('../database/db')
+const { TaskManager } = require('../database/db')
 
 const route = Router()
 
+async function sortBy(sortvalue){
+  const todos = await Users.findAll({
+    order: [                    // ORDER BY age DESC, name ASC
+        ['sortvalue', 'ASC']
+    ]
+  })
+  return todos
+
+}
+
 route.get('/', async (req, res) => {
-    const tasks = await Tasks.All()
+    const tasks = await TaskManager.findAll()
     res.send(tasks)
 })
 
-route.post('/CreateTask.html', async (req, res) => {
+route.post('/', async (req, res) => {
     if (typeof req.body.task !== 'string') {
       return res.status(400).send({ error: 'Task name not provided' })
     }
     
   
-    const newTodo = await Todos.create({
+    const newTodo = await TaskManager.create({
         task: req.body.task,
         due: req.body.due,
         status: req.body.status,
@@ -22,7 +32,7 @@ route.post('/CreateTask.html', async (req, res) => {
         description: req.body.description,
     })
   
-    res.status(201).send({ success: 'New task added', data: newTodo })
+    res.status(201).send({ success: 'Notes for the task has been added', data: newTodo })
   })
 
   route.get('/:id', async (req, res) => {
@@ -52,7 +62,7 @@ route.post('/CreateTask.html', async (req, res) => {
           error: 'task id must be an integer',
         })
     }
-    const newTodo = await Todos.create({
+    const newTodo = await TaskManager.create({
       task: req.body.task,
       due: req.body.due,
       status: req.body.status,
