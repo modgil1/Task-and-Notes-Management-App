@@ -1,5 +1,5 @@
 $(function(){
-    const addTaskButton = $("input[type='button']")
+    const addTaskButton = $("input[id='button']")
    
     addTaskButton.click(function(){
 
@@ -8,12 +8,13 @@ $(function(){
     let taskStatus = $("input[name='task-status']:checked").val()
     let taskPriority = $("input[name='priority']:checked").val()
     let taskDescription = $("input[id='desc']").val()
-    let taskNotes = $("input[id='notes']").val()
+    let taskNotes =  $("input[id='notes']").val()
+    
     
 
     $.post(
         "/tasks",
-        {task: task, due: taskDueDate, status: taskStatus, priority:taskPriority, description: taskDescription, Notes: taskNotes},
+        {task: task, due: taskDueDate, status: taskStatus, priority:taskPriority, description:taskDescription, notes:taskNotes},
         function(data){
             if(data!=null){
                 alert("Your Task has been added successfully")

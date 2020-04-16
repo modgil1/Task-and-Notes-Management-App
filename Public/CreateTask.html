@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="./Scripts/jquery-3.4.1.js"></script>
     <script src="./Scripts/taskPost.js"></script>
     <script src="./Scripts/expand.js"></script>
@@ -11,7 +16,7 @@
 </head>
 <body>
     <div class="jumbotron">
-        <h1>Task and Notes Manager</h1>
+        <h2>Task and Notes Manager</h2>
     </div>
     <form>
         <div class="container">
@@ -63,18 +68,18 @@
 
             <div class="row">
                 <div class="block">
-                    <h3>Add Special Note &emsp;</h3>
+                    <h3>Add Special Note</h3>
                     <input type="text" id="notes" style="width: 100%;">
                 </div>
             </div>
 
         </div><br />
 
-        <input type="button" value="Add" id="button"><br />
+        <input type="submit" value="Add" id="button" onclick="addTask()"><br />
     </form><br />
-    <a href="./index.html" style="margin: 10px;">Back to List</a><rr />
+    <a href="./index.html" style="margin: 10px;">Back to List</a><br />
 
-    <footer class="jumbotron">
+    <footer style="text-align: center;">
         <p><span style="color: red;">Copyright</span> © 1999-2020 Samriti_Modgil. All rights reserved.</p>
     </footer>
 </body>

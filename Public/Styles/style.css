@@ -3,9 +3,13 @@ legend{
     color:blueviolet;
 }
 
+body{
+    background-color: bisque;
+}
+
 .jumbotron{
-    background-color: paleturquoise !important;
-    color: blueviolet;
+    background-color: aquamarine !important;
+    color: black;
    align-content: center;
    text-align: center;    
 }
@@ -23,8 +27,8 @@ legend{
     display: block;
     width: 100px;
     height: 40px;
-    margin-left: 46%;
-    background: black;
+    margin-left: 44%;
+    background: seagreen;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
@@ -45,7 +49,24 @@ legend{
     font-weight: bold;
   }
   
+  ul > .multi{
+      border: solid black 1px;
+      width:80%;
+      margin-left: 10%;
+  }
 
+  .update{
+    display: block;
+    position: absolute;
+    left: 47%;
+    margin: 2px;
+  }
+
+ .list {
+    border: solid black 1px;
+    width:80%;
+    margin-left: 10%;
+}
 ul > .multi::after {
     content:' +'
   }

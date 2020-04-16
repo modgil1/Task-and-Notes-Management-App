@@ -5,43 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/style.css" type="text/css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="./Scripts/jquery-3.4.1.js"></script>
-    <script async defer src="./Scripts/script.js"></script>
     <script async defer src="./Scripts/expand.js"></script>
     <title>Task and Notes Manager</title>
 </head>
-<body>
+<body onload="todosLoader()">
     
     
     <div class="jumbotron">
-        <h1>Task and Notes Manager</h1><br/>
+        <h2>Task and Notes Manager</h2><br/>
         <a class="button" href="CreateTask.html">Add Task</a>
     </div>
 
 
 <legend>List Of Tasks are Shown Below:</legend>
 
-<label for="sortBy">sort by</label>
+<label for="sortBy">&emsp; sort by</label>
 
-    <select id="sortBy">
-    <option value="duedate">Due Date</option>
+    <select id="sortBy" onchange="todosLoader()">
+    <option value="due">Due Date</option>
     <option value="priority">Priority</option>
     <option value="status">Status</option>
     
     </select>
 
-<ul id="myList">
+<br/><ul id="myList">
 
-</ul>
+</ul><br />
 
+<div class="modal fade" id="signup">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
 
+            <!-- Modal Header -->
+            <div class="modal-header" style="color:grey;text-align:center;height:50px;">
+                <h4 class="modal-title">Edit Details</h4>
+
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <span id="pmsg"></span>
+                <form>
+
+                    <div class="form-group">
+                        <label for="date">Modify DueDate:*</label>
+                        <input type=date id="update_duedate">
+                    </div>
+
+                    <div class=" form-group ">
+                        <label for="priority">Change Priority:*</label>
+                        <select id="update_priority">
+                        <option value="high">High</option>
+                        <option vlaue="medium" selected>Medium</option>
+                        <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Change Status:</label>
+                        <input type="checkbox"  id="update_incomplete" onclick="onlyOne(this)" selected>InComplete
+                        <input type="checkbox"  id="update_complete" onclick="onlyOne(this)" selected>Complete
+
+                    </div>
+                    <script>
+                        function onlyOne(checkbox) {
+                            var checkboxes = document.getElementsByName('check')
+                            checkboxes.forEach((item) => {
+                                if (item !== checkbox) item.checked = false
+                            })
+                        }
+                    </script>
+
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="Submit" class="btn btn-primary" id="editDetails">Update</button>
+                <button type="Submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
   
-<footer class="jumbotron">
+<footer style="text-align: center;">
     <p><span style="color: red;">Copyright</span> © 1999-2020 Samriti_Modgil. All rights reserved.</p>
 </footer>
 
 <!-- <script type="text/javascript" src="Scripts/script.js"></script> -->
 </body>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
 </html>
 
